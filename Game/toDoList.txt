@@ -1,0 +1,22 @@
+
+class Monster:
+
+inventory system
+
+determine stat bonuses
+
+combat
+    attack power
+    armour rank
+
+events
+
+spells
+
+items
+    treasure
+
+
+Player is a Hero
+
+Hero has an Inventory
