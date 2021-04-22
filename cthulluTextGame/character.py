@@ -1,4 +1,5 @@
 import random
+import os
 from names import nameList # need to put in config folder
 
 def getName():
@@ -27,6 +28,7 @@ class Hero:
         self.inventory = []
 
     def __str__(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
         stringOut = self.name +"\n"
         stringOut += f"Hit Points: {self.hitPoints}   Sanity: {self.sanity}" + "\n"
         stringOut += f"Strength: {self.strength}     Will Power: {self.willPower}" + "\n"
@@ -39,11 +41,35 @@ class Hero:
     def giveItem(self, item):
         self.inventory.append(item)
 
-    def dropItem(self):
+    def dropItem(self):  # not done
         menuCounter = 1
         for invetoryItem in self.inventory:
             print(f"{menuCounter}. {invetoryItem}")
             menuCounter += 1
+
+        choice = input("Which item would you like to drop?: ")
+        
+        try:
+            choice = int(choice)
+            temp = self.inventory[choice - 1]
+            self.inventory.remove(self.inventory[choice - 1])
+            print(temp, "removed")
+            temp = input('Hit ENTER to continue')
+
+        except ValueError:
+            if choice in self.inventory:
+                self.inventory.remove(choice)
+                print(choice, "removed")
+                temp = input('Hit ENTER to continue')
+
+        except IndexError:
+            print("Sorry that does not exist.")
+            temp = input('Hit ENTER to continue')
+            self.dropItem()
+
+
+
+
 
 
 
@@ -55,4 +81,8 @@ if __name__ == "__main__":
     myHero.giveItem("Back Pack") # make this so that giveItem can add
     myHero.giveItem("Banana")   #multiple things
 
+    print(myHero)
+
     myHero.dropItem()
+
+    print(myHero)
