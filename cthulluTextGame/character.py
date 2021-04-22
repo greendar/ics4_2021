@@ -1,6 +1,6 @@
 import random
 import os
-from names import nameList # need to put in config folder
+from config.names import nameList # need to put in config folder
 
 def getName():
     return random.choice(nameList)
@@ -48,7 +48,7 @@ class Hero:
             menuCounter += 1
 
         choice = input("Which item would you like to drop?: ")
-        
+
         try:
             choice = int(choice)
             temp = self.inventory[choice - 1]
