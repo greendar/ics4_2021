@@ -1,0 +1,4 @@
+Name,Light,Melee,Range,Damage,Healing,Armour,Uses
+Knife,FALSE,TRUE,10,4,FALSE,FALSE,-1
+Flash Light,TRUE,TRUE,10,1,FALSE,FALSE,-1
+Flame Thrower,,,,,,,

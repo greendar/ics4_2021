@@ -1,6 +1,6 @@
 import random
 import os
-from config.names import nameList # need to put in config folder
+from config.data import names, gear
 
 def getName():
     return random.choice(nameList)
@@ -72,17 +72,8 @@ class Hero:
 
 
 
-
 if __name__ == "__main__":
-    myHero = Hero()
-    myHero.giveItem("Hammer")
-    myHero.giveItem("Necronomicon")
-    myHero.giveItem("Pancakes")
-    myHero.giveItem("Back Pack") # make this so that giveItem can add
-    myHero.giveItem("Banana")   #multiple things
-
-    print(myHero)
-
-    myHero.dropItem()
-
-    print(myHero)
+    bob = gear['Knife'].split(', ')
+    print( bob, bob[1])
+    a = Item('Knife', bob[0], bob[1], bob[2], bob[3], bob[4], bob[5], bob[6])
+    print(a)
