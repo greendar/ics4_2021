@@ -18,10 +18,12 @@ charList = characterSheet.split('\n')
 
 print(charList)
 
-"""
 display_surface = pygame.display.set_mode((X, Y))
 pygame.display.set_caption('Show Text')
 font = pygame.font.Font('freesansbold.ttf', 32)
+
+for line in charList:
+
 
 
 text1 = font.render('apple apple', True, blue, white)
@@ -48,4 +50,3 @@ while True:
 #if __name__ == "__main__":
     bob = character.Hero()
     characterSheet = bob.__str__()
-"""
