@@ -3,7 +3,7 @@ import os
 from config.data import names, gear
 
 def getName():
-    return random.choice(nameList)
+    return random.choice(names)
 
 def d6():
     return random.randint(1,6)
@@ -73,7 +73,6 @@ class Hero:
 
 
 if __name__ == "__main__":
-    bob = gear['Knife'].split(', ')
-    print( bob, bob[1])
-    a = Item('Knife', bob[0], bob[1], bob[2], bob[3], bob[4], bob[5], bob[6])
+    bob = Hero()
+    a = bob.__str__()
     print(a)
