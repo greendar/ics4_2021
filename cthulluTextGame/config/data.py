@@ -18,16 +18,17 @@ gear = {
 
 }
 
-names = (
-    'Drake',
-    'Leonard',
-    'Alba',
-    'Josie',
-    'Simon'
-    )
+try:
+    from nameList import names
+except:
+    from config.nameList import names
+names = names
+
+
 
 
 if __name__ == "__main__":
     bob = gear['Knife'].split(', ')
     print( bob, bob[1])
     #a = Item('Knife', gear['Knife'][1])
+    print(f"there is {len(names)} names in the names list")
