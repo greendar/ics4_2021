@@ -38,6 +38,9 @@ class Hero:
         stringOut += "and that's it.\n"
         return stringOut
 
+    def charSheet(self):
+        display_surface = pygame.display.set_mode((X, Y))
+
     def giveItem(self, item):
         self.inventory.append(item)
 

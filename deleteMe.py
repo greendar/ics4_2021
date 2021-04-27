@@ -8,6 +8,8 @@ trigger = Pin(18, Pin.OUT)
 echo = Pin(19, Pin.IN)
 
 def ultra():
+    signalon = 0
+    signaloff = 0
    trigger.low()
    utime.sleep_us(2)
    trigger.high()
@@ -24,8 +26,10 @@ def ultra():
        greenLED.high()
    else:
        greenLED.low()
-       redLED.low()
-   print("The distance from object is ",distance,"cm")
+       redLED.high()
+   print("The distance from object is ",
+   +
+   distance,"cm")
 
 while True:
    ultra()

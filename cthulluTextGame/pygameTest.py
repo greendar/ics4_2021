@@ -7,8 +7,8 @@ white = (255, 255, 255)
 green = (0, 255, 0)
 blue = (0, 0, 128)
 
-X = 400
-Y = 400
+X = 600
+Y = 600
 
 # characterSheet = __str__ method from class Hero ***************************************
 bob = character.Hero()
@@ -23,7 +23,6 @@ pygame.display.set_caption('Show Text')
 font = pygame.font.Font('freesansbold.ttf', 32)
 
 
-
 def print2screen(charList):
     vartop = 0
     for line in charList:
@@ -33,20 +32,23 @@ def print2screen(charList):
         vartop += 40
         textRect.left = 20
         display_surface.blit(text, textRect)
-        
-    
-
 
 
 # infinite loop
 while True:
     display_surface.fill(white)
     print2screen(charList)
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+        keys=pygame.key.get_pressed()
+        if keys[pygame.K_r]:
+            charList = characterSheet.split('\n')
+            pygame.display.update()
+
+
         pygame.display.update()
 
 
