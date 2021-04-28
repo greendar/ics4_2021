@@ -13,9 +13,12 @@ class Item:
 
 """
 
-import csvConvert
-gear = csvConvert.getCSV2DarrayData("items.csv")
 
+try:
+    from csvConvert import GearItems
+except:
+    from config.csvConvert import GearItems
+gear = GearItems
 
 
 try:

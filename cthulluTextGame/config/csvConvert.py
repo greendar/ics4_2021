@@ -16,7 +16,7 @@ To Do List:
 #The Do it all Function
 def getCSV2DarrayData(csvfilename):
     csv2Dlist = []
-    csv2Dlist = csvConvert("items.csv")
+    csv2Dlist = csvConvertFile(csvfilename)
     #print(csv2Dlist)
     #print()
     csv2Dlist = checkforBooleanInString2dList(csv2Dlist)
@@ -34,7 +34,10 @@ def getCSV2DarrayData(csvfilename):
     csv2Dlist = formatItemsForGearPY(csv2Dlist)
     
     
-    import Gear
+    try:
+        import Gear
+    except:
+        import config.Gear as Gear
     #print(csvListReturned)
     #print()
     csv2Dlist = Gear.items
@@ -52,7 +55,7 @@ def getCSV2DarrayData(csvfilename):
 
 
 
-def csvConvert(csvfilename):
+def csvConvertFile(csvfilename):
     """
     -opens file via {csvfilename} then returns a 2D list based on csv data given
     -any extra fomating i.e. like colour may not be notice by these functions and may break stuff
@@ -212,8 +215,8 @@ def formatItemsForGearPY(list2dInput):
 
 
 
-
-
+if __name__ != "__main__":
+    GearItems = getCSV2DarrayData("config/items.csv")
 
 
 if __name__ == "__main__":
