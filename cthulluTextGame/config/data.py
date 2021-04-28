@@ -13,10 +13,10 @@ class Item:
 
 """
 
-gear = {
-    'Knife': "False, True, 10, 4, False, False, -1"
+import csvConvert
+gear = csvConvert.getCSV2DarrayData("items.csv")
 
-}
+
 
 try:
     from nameList import names
