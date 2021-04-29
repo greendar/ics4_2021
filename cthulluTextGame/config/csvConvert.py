@@ -153,7 +153,7 @@ def checkifItemIsUnfinished(list2dInput):
                 skipItemFlag = True
             if (skipItemFlag):
                 continue
-            print(list2dInput[y][x])
+            #print(list2dInput[y][x])
     errorLogfile.close()
     list2dOutput = list2dInput
     return list2dOutput
