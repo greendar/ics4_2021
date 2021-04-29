@@ -46,7 +46,7 @@ def getCSV2DarrayData(csvfilename):
     if os.path.exists("Gear.py"):
         os.remove("Gear.py")
     else:
-        print("The file does not exist")
+        print("Error: The file does not exist")
     
     
     
@@ -189,16 +189,16 @@ def formatItemsForGearPY(list2dInput):
                 ItemStats += str(list2dInput[y][x]) + ", "
             for x in range(len(list2dInput[y])-1, len(list2dInput[y])):
                 ItemStats += str(list2dInput[y][x]) + "'"
-            print(ItemName)
-            print(ItemStats)
+            #print(ItemName)
+            #print(ItemStats)
             finishedITEMdata = "\t" + ItemName + ItemStats
             itemList.append(str(finishedITEMdata))
-            print(finishedITEMdata)
-            print(itemList)
+            #print(finishedITEMdata)
+            #print(itemList)
             
             
             
-            print()
+            #print()
         if (skipItemFlag):
             continue
     for i in range(len(itemList)):
