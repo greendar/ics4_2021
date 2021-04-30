@@ -13,10 +13,13 @@ class Item:
 
 """
 
-gear = {
-    'Knife': "False, True, 10, 4, False, False, -1"
 
-}
+try:
+    from csvConvert import GearItems
+except:
+    from config.csvConvert import GearItems
+gear = GearItems
+
 
 try:
     from nameList import names
