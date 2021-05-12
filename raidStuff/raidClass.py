@@ -35,15 +35,11 @@ class Raid:
             dataout += file_string_02[0]
             #print(dataout, file_string_01 ,file_string_02)
             
-            if (len(file_string_01)==0) and (len(file_string_02)==0):
-                break
             file_string_01 = file_string_01[1:]
             file_string_02 = file_string_02[1:]
-            
-
-            
-
-    return dataout
+            if (len(file_string_01)==0) and (len(file_string_02)==0):
+                break
+        return dataout
 
 
     def raidOne(dataIn, fileName):
