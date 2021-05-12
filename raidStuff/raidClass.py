@@ -43,7 +43,7 @@ class Raid:
 
             
 
-        return dataout
+    return dataout
 
 
     def raidOne(dataIn, fileName):
