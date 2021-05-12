@@ -18,8 +18,29 @@ class Raid:
                 pass
         f1.close()
         f2.close()
+        return fileName0, fileName1
 
-    def raidZeroRead():
+
+
+    def raidZeroRead(fN0, fN1):
+        tempFile0 = open(fN0, 'r')
+        tempFile1 = open(fN1, 'r')
+
+        tempStr0 = tempFile0.read()
+        tempStr1 = tempFile1.read()
+
+        i = 0
+        tempStr = ""
+        for letter in tempStr0:
+            tempStr += letter
+            tempStr += tempStr1[i]
+            i += 1
+
+        return tempStr
+
+
+
+
 
 
     def raidOne(dataIn, fileName):
