@@ -33,7 +33,7 @@ class Raid:
         while True:
             dataout += file_string_01[0]
             dataout += file_string_02[0]
-            print(dataout, file_string_01 ,file_string_02)
+            #print(dataout, file_string_01 ,file_string_02)
             
             if (len(file_string_01)==0) and (len(file_string_02)==0):
                 break
