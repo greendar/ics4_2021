@@ -22,6 +22,8 @@ class Raid:
     def raidZeroRead(fileName):
         raidType = 'raid0'
         raidSize = 2
+        #fileNames[raidSize] = ["" for i in range(raidSize)]
+        #print(fileNames)
         fileName0 = 'data/' + fileName + raidType + '-' + "0.txt"
         fileName1 = 'data/' + fileName + raidType + '-' + "1.txt"
         f1 = open(fileName0, 'r')
@@ -31,8 +33,10 @@ class Raid:
 
         dataout = ""
         while True:
-            dataout += file_string_01[0]
-            dataout += file_string_02[0]
+            if len(file_string_01) != 0:
+                dataout += file_string_01[0]
+            if len(file_string_02) != 0:
+                dataout += file_string_02[0]
             #print(dataout, file_string_01 ,file_string_02)
             
             file_string_01 = file_string_01[1:]
