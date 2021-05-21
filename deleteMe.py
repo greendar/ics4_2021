@@ -1,36 +1,35 @@
-from machine import Pin
-import utime
+import random
+import string
+
+testText = "the quick brown fox jumped over the lazy dog"
+
+def cleanText(textFile):
+    f = open(textFile, 'r')
+    fileCont = f.read()
+    stringOut = ""
+    i = 0
+    for letter in fileCont:
+        if ord(letter) <= 122 and ord(letter) >= 97:
+            stringOut += letter
+            i += 1
+        if i == 60:
+            stringOut += "\n"
+            i = 0
+
+    return stringOut
 
 
-greenLED = Pin(16, Pin.OUT)
-redLED = Pin(17, Pin.OUT)
-trigger = Pin(18, Pin.OUT)
-echo = Pin(19, Pin.IN)
+def ceaserCypher(stringIn, shift):
+    stringOut = ""
+    for letter in stringIn:
+        if letter == " ":
+            stringOut += " "
+        else:
+            newIndex = ord(letter) + shift
+            if newIndex > 122:
+                newIndex = newIndex % 123 + 97
+            stringOut += chr(newIndex)
+    return stringOut
 
-def ultra():
-    signalon = 0
-    signaloff = 0
-   trigger.low()
-   utime.sleep_us(2)
-   trigger.high()
-   utime.sleep_us(5)
-   trigger.low()
-   while echo.value() == 0:
-       signaloff = utime.ticks_us()
-   while echo.value() == 1:
-       signalon = utime.ticks_us()
-   timepassed = signalon - signaloff
-   distance = (timepassed * 0.0343) / 2
-   if distance < 15:
-       redLED.low()
-       greenLED.high()
-   else:
-       greenLED.low()
-       redLED.high()
-   print("The distance from object is ",
-   +
-   distance,"cm")
 
-while True:
-   ultra()
-   utime.sleep(1)
+cleanText('randomText.txt')
